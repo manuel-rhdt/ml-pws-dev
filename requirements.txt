@@ -1,0 +1,8 @@
+ipykernel
+jax[cpu]
+flax
+scipy
+matplotlib
+optax
+polars
+clu
