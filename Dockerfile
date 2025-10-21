@@ -23,6 +23,11 @@ RUN /bin/bash -c "source activate pyenv && \
     mamba install -y flax jax jaxlib lightning matplotlib numpy polars scipy pytorch tqdm && \
     pip install clu"
     
+RUN useradd --create-home --shell /bin/bash reinhardt
+USER reinhardt
+WORKDIR /home/reinhardt
+
+    
 # Activate environment by default
 SHELL ["bash", "--login", "-c"]
 
