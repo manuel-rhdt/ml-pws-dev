@@ -3,7 +3,7 @@ FROM condaforge/mambaforge:latest
 
 # Set up environment variables
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PATH /opt/conda/bin:$PATH
+ENV PATH=/opt/conda/bin:$PATH
 ENV PYTHONUNBUFFERED=1
 
 # Create a working directory
