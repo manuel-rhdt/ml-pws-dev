@@ -9,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read        # allows checking out your code
+      packages: write       # allows publishing to GHCR
+      id-token: write       # (optional but recommended for OIDC auth)
 
     steps:
       - name: Checkout repository
