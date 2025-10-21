@@ -20,7 +20,8 @@ RUN mamba create -y -n pyenv python=3.11 && \
 
 # Install Python packages inside the environment
 RUN /bin/bash -c "source activate pyenv && \
-    mamba install -y clu flax jax jaxlib lightning matplotlib numpy polars scipy torch tqdm"
+    mamba install -y flax jax jaxlib lightning matplotlib numpy polars scipy pytorch tqdm && \
+    pip install clu"
 
 # Neovim configuration optimized for Python
 RUN mkdir -p ~/.config/nvim
