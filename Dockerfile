@@ -42,7 +42,8 @@ RUN echo 'call plug#begin("~/.vim/plugged")' >> ~/.config/nvim/init.vim && \
     echo 'filetype plugin indent on' >> ~/.config/nvim/init.vim && \
     echo 'lua << EOF' >> ~/.config/nvim/init.vim && \
     echo 'require("lspconfig").pyright.setup{}' >> ~/.config/nvim/init.vim && \
-    echo 'EOF' >> ~/.config/nvim/init.vim
+    echo 'EOF' >> ~/.config/nvim/init.vim && \
+    nvim --headless +PlugInstall +qall
 
 # Install Python LSP server (Pyright) for Neovim
 RUN /bin/bash -c "source activate pyenv && pip install 'python-lsp-server[all]' pyright black isort flake8"
