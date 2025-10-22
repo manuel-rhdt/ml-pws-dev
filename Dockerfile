@@ -19,7 +19,7 @@ RUN mamba create -y -n pyenv python=3.12
 
 # Install Python packages inside the environment
 RUN /bin/bash -c "source activate pyenv && \
-    mamba install -y flax jax jaxlib lightning matplotlib numpy polars scipy pytorch torchsde tqdm && \
+    mamba install -y flax jax jaxlib lightning matplotlib numpy polars scipy pytorch torchsde ray-core tqdm && \
     pip install clu"
     
 RUN useradd --create-home --shell /bin/bash reinhardt
