@@ -15,12 +15,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Create a new environment and install Python + dependencies
-RUN mamba create -y -n pyenv python=3.11 && \
-    echo "conda activate pyenv" >> ~/.bashrc
+RUN mamba create -y -n pyenv python=3.12
 
 # Install Python packages inside the environment
 RUN /bin/bash -c "source activate pyenv && \
-    mamba install -y flax jax jaxlib lightning matplotlib numpy polars scipy pytorch tqdm && \
+    mamba install -y flax jax jaxlib lightning matplotlib numpy polars scipy pytorch torchsde tqdm && \
     pip install clu"
     
 RUN useradd --create-home --shell /bin/bash reinhardt
