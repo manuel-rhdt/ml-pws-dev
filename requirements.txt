@@ -1,5 +1,4 @@
-ipykernel
-jax[cpu]
+jax
 flax
 scipy
 matplotlib
